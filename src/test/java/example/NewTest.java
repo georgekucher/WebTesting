@@ -1,5 +1,7 @@
 package example;        
  
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
@@ -12,7 +14,7 @@ public class NewTest {
         public void testEasy() {
             driver.get("http://www.guru99.com/selenium-tutorial.html");  
             String title = driver.getTitle();                
-            Assert.assertTrue(title.contains("Free Selenium Tutorials"));       
+            AssertJUnit.assertTrue(title.contains("Free Selenium Tutorials"));       
         }   
         @BeforeTest
         public void beforeTest() {  

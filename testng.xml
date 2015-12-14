@@ -4,6 +4,8 @@
   <test name="Test">
     <classes>
       <class name="example.NewTest"/>
+      <class name="administrator.SignInTest"/>
+      <class name=".LangSwitchTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

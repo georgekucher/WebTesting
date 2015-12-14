@@ -1,9 +1,7 @@
 
 
-import static org.junit.Assert.assertTrue;
-
-import org.junit.Test;
-
+import static org.testng.AssertJUnit.assertTrue;
+import org.testng.annotations.Test;
 import pages.BasePage;
 import tools.BaseTest;
 import tools.PropertiesProvider;
