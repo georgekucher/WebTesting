@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 public class NewTest {      
         private WebDriver driver;       
         @Test              
-        public void testEasy() {    
+        public void testEasy() {
             driver.get("http://www.guru99.com/selenium-tutorial.html");  
             String title = driver.getTitle();                
             Assert.assertTrue(title.contains("Free Selenium Tutorials"));       
