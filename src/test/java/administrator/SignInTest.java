@@ -18,14 +18,14 @@ public class SignInTest extends BaseTest {
 	@Test
 	public void testSignIn() {
 		signIn = new SignIn(driver);
-		signIn.signInToCRSMS(USER_EMAIL, USER_PASSWORD, false);
+		signIn.signIn(USER_EMAIL, USER_PASSWORD, false);
 		assertTrue(signIn.getUserMenuText().contains(USER_EMAIL));
 	}
 
 	@Test
 	public void testSignOut() {
 		signIn = new SignIn(driver);
-		signIn.signInToCRSMS(USER_EMAIL, USER_PASSWORD, false);
+		signIn.signIn(USER_EMAIL, USER_PASSWORD, false);
 		signIn.signOutFromCRSMS();
 		assertTrue(signIn.getSignInText().contains(SIGN_IN_TEXT));
 	}

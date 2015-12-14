@@ -41,7 +41,7 @@ public class SignIn extends BasePage {
 		reset.click();
 	}
 	
-	public void signInToCRSMS(String strEmail, String strPassword, Boolean willRememberMe) {
+	public void signIn(String strEmail, String strPassword, Boolean willRememberMe) {
 		this.clickSignInLink();
 		this.setEmail(strEmail);
 		this.setPassword(strPassword);
