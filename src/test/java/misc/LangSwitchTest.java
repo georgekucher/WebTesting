@@ -1,5 +1,10 @@
+package misc;
 
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import static org.testng.AssertJUnit.assertTrue;
 import org.testng.annotations.Test;
 import pages.BasePage;
@@ -16,6 +21,6 @@ public class LangSwitchTest extends BaseTest {
 		basePage = new BasePage(driver);
 		basePage.langUa();
 		basePage.langEn();
-		assertTrue(basePage.getLogoTitle().contains(LOGO_TITLE));
+		AssertJUnit.assertTrue(basePage.getLogoTitle().contains(LOGO_TITLE));
 	}
 }

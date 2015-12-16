@@ -15,10 +15,36 @@ public class SignIn extends BasePage {
 	@FindBy(id = "submit")
 	private static WebElement submit; 
 	@FindBy(id = "reset")
-	private static WebElement reset; 
+	private static WebElement reset;
+	@FindBy(xpath = "//a[@href='/crsms/signUp']")
+	protected static WebElement signUp;
 
 	public SignIn(WebDriver driver) {
 		super(driver);
+	}
+
+	public static WebElement getEmail() {
+		return email;
+	}
+
+	public static WebElement getPassword() {
+		return password;
+	}
+
+	public static WebElement getRememberMe() {
+		return rememberMe;
+	}
+
+	public static WebElement getSubmit() {
+		return submit;
+	}
+
+	public static WebElement getReset() {
+		return reset;
+	}
+
+	public static WebElement getSignUp() {
+		return signUp;
 	}
 
 	public void setEmail(String strEmail) {
@@ -49,5 +75,9 @@ public class SignIn extends BasePage {
 			this.rememberMe();
 		}
 		this.clickSignIn();
+	}
+	
+	public void clickSignUp() {
+		signUp.click();
 	}
 }
