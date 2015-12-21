@@ -18,7 +18,7 @@ public class BaseTest {
 		driver.get(BASEURL);
 	}
 	
-	@AfterClass
+	//@AfterClass
 	public static void tearDown() {
 		driver.close();
 		driver.quit();

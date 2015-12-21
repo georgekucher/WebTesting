@@ -1,12 +1,8 @@
 package misc;
 
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
 
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
-import static org.testng.AssertJUnit.assertTrue;
-import org.testng.annotations.Test;
 import pages.BasePage;
 import tools.BaseTest;
 import tools.PropertiesProvider;

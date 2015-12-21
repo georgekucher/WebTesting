@@ -1,4 +1,4 @@
-package teacher;
+package pages.teacher;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,7 +14,7 @@ public class NewCourse extends BasePage {
 	@FindBy(id = "description")
 	private static WebElement description;
 	@FindBy(id = "areas")
-	private static Select areas;
+	private static WebElement areas;
 	@FindBy(id = "duration")
 	private static WebElement duration;
 	@FindBy(id = "open")
@@ -35,7 +35,8 @@ public class NewCourse extends BasePage {
 	}
 
 	public void setArea(String strAreaValue) {
-		areas.selectByValue(strAreaValue);
+		Select areasSel = new Select(areas);
+		areasSel.selectByValue(strAreaValue);
 	}
 
 	public void setDuration(String strDuration) {

@@ -15,8 +15,13 @@ public class SignUp extends BasePage {
 	@FindBy(name = "teacher")	
 	private static WebElement teacher; 
 	@FindBy(id = "create")
-	private static WebElement create; 
-
+	private static WebElement create;
+	@FindBy(id = "email-error")
+	private static WebElement emailError;
+	@FindBy(id = "password-error")
+	private static WebElement passwordError;
+	@FindBy(id = "confPassword-error")
+	private static WebElement confPasswordError;
 
 	public SignUp(WebDriver driver) {
 		super(driver);
@@ -71,5 +76,17 @@ public class SignUp extends BasePage {
 			this.teacher();
 		}
 		this.clickCreate();
+	}
+	
+	public String getEmailErrorText() {
+		return emailError.getText();
+	}
+
+	public String getPasswordErrorText() {
+		return passwordError.getText();
+	}
+
+	public String getConfPasswordErrorText() {
+		return confPasswordError.getText();
 	}
 }

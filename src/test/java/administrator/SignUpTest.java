@@ -11,8 +11,12 @@ import tools.PropertiesProvider;
 
 public class SignUpTest extends BaseTest {
 	private static final String USER_EMAIL = PropertiesProvider.getProperty("user.email");
-	private static final String USER_PASSWORD = PropertiesProvider.getProperty("user.password");
-	
+	private static final String USER_PASSWORD = PropertiesProvider.getProperty("user.password");	
+	private static final String REQUIRED_FIELD_ERROR
+								= PropertiesProvider.getProperty("crsms.error.field.required");	
+	private static final String NON_EQUAL_FIELD_ERROR
+								= PropertiesProvider.getProperty("crsms.error.password.not.equals");	
+
 	private static SignIn signIn;
 	private static SignUp signUp;
 	
@@ -39,5 +43,18 @@ public class SignUpTest extends BaseTest {
 		signIn.signIn(USER_EMAIL, USER_PASSWORD, false);
 		AssertJUnit.assertTrue(signIn.getUserMenuText().contains(USER_EMAIL));
 		signIn.signOutFromCRSMS();
+	}
+	
+	@Test
+	public void testEmptySignUp() {
+		signUp.signUp(null, null, null, false);
+		AssertJUnit.assertTrue(signUp.getPasswordErrorText().equals(REQUIRED_FIELD_ERROR));
+		AssertJUnit.assertTrue(signUp.getEmailErrorText().equals(REQUIRED_FIELD_ERROR));
+	}
+
+	@Test
+	public void testNonEqualPasswords() {
+		signUp.signUp(null, USER_PASSWORD, null, false);
+		AssertJUnit.assertTrue(signUp.getConfPasswordErrorText().equals(NON_EQUAL_FIELD_ERROR));
 	}
 }
