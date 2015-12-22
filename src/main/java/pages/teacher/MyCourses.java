@@ -14,6 +14,8 @@ public class MyCourses extends BasePage {
 	private static WebElement lastCourseName;
 	@FindBy(xpath = "//tbody/tr[last()]/td[last()]//a[contains(@href, '/delete')]")
 	private static WebElement deleteLastCourse;
+	@FindBy(xpath = "//tbody/tr[last()]/td[last()]//a[contains(@href, '/modules/')]")
+	private static WebElement lastCourseModules;
 	
 	public MyCourses(WebDriver driver) {
 		super(driver);
@@ -29,5 +31,9 @@ public class MyCourses extends BasePage {
 	
 	public void clickDeleteLastCourse() {
 		deleteLastCourse.click();
+	}
+	
+	public void clickLastCourseModules() {
+		lastCourseModules.click();
 	}
 }
