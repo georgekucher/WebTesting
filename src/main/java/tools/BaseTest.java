@@ -1,10 +1,10 @@
 package tools;
 import java.util.concurrent.TimeUnit;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 
 public class BaseTest {
 	private static final String BASEURL = PropertiesProvider.getProperty("base.url");
@@ -18,7 +18,7 @@ public class BaseTest {
 		driver.get(BASEURL);
 	}
 	
-	@AfterClass
+	//@AfterClass
 	public static void tearDown() {
 		driver.close();
 		driver.quit();
